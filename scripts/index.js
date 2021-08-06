@@ -7,16 +7,80 @@ class ProjectCard extends HTMLElement {
 
         const projectCardContainer = document.createElement('section');
         projectCardContainer.setAttribute('class', 'project-card-container');
-        projectCardContainer.setAttribute('part', 'card-container')
+        
+        // card styling     
+        shadow.innerHTML = 
+        `
+        <style>
+        .project-card-container {
+            background-color: #292E33;
+            font-family: Noto Sans JP;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding-bottom: 10px;
+        }
 
-        const helloWorld = document.createElement('p');
-        helloWorld.innerHTML = 'Hello World';
-        // styling
-        const style = document.createElement('style');
-        style.textContent = ".project-card-container{width: 100px;height: 100px;border: 2px solid black;}"
+        .project-image-container {
+            height: 60%;
+            width: 100%;
+            padding: 5px 0px 10px 0px;
+        }
 
-        projectCardContainer.appendChild(helloWorld);
-        projectCardContainer.appendChild(style);
+        .project-image-container img{
+            height: 100%;
+            width: 100%;
+        }
+
+        a, a:visited{
+            color: white;
+        }
+
+        #project-name {
+            text-align: center;
+        }
+
+        #project-desc {
+            padding-left: 5px;
+        }
+
+        #project-tags {
+            padding-left: 5px;
+        }
+        </style>
+        `
+        
+        // card content
+        // will make this more dynamic for github api later
+        // could turn this into an object
+        const projectImageContainer = document.createElement('div');
+        projectImageContainer.setAttribute('class', 'project-image-container');
+
+        const projectImage = document.createElement('img');
+        projectImage.setAttribute('src', 'https://images.pexels.com/photos/4451844/pexels-photo-4451844.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+        projectImage.setAttribute('alt', 'thumbnail for project');
+        projectImageContainer.appendChild(projectImage)
+        
+        const projectName = document.createElement('a');
+        projectName.setAttribute('id', 'project-name');
+        projectName.setAttribute('href', 'https://nifty-heyrovsky-83f270.netlify.app/');
+        projectName.innerHTML = 'Slapjack Card Game';
+
+        const projectDesc = document.createElement('p');
+        projectDesc.setAttribute('id', 'project-desc');
+        projectDesc.innerHTML = `
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Lorem ipsum dolor sit amet.`;
+
+        const projectTags = document.createElement('p');
+        projectTags.setAttribute('id', 'project-tags');
+        projectTags.innerHTML = 'languages: js, html, scss/css';
+
+
+        projectCardContainer.appendChild(projectImageContainer);
+        projectCardContainer.appendChild(projectName);
+        projectCardContainer.appendChild(projectDesc);
+        projectCardContainer.appendChild(projectTags);
 
         shadow.appendChild(projectCardContainer);
     }
