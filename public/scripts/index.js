@@ -2,7 +2,7 @@
 class ProjectCard extends HTMLElement {
     constructor() {
         super();
-        
+                
         const shadow = this.attachShadow({mode: 'open'});
 
         const projectCardContainer = document.createElement('section');
@@ -83,6 +83,7 @@ class ProjectCard extends HTMLElement {
         projectCardContainer.appendChild(projectTags);
 
         shadow.appendChild(projectCardContainer);
+        
     }
 
 }
@@ -90,6 +91,40 @@ class ProjectCard extends HTMLElement {
 customElements.define('project-card', ProjectCard);
 
 const projectsContainer = document.querySelector('#projects-container');
-const projectCard = document.createElement('project-card');
 
-projectsContainer.appendChild(projectCard);
+// could make this into a projectcard method and make constructor variables link to the response
+let repos = [];
+async function getRepos() {
+
+    try {
+        let response = await fetch('/get_repos', {
+            method: 'GET',
+            headers: {
+                'accept': 'application/json'
+            }
+        });
+        let data = await response.json();
+
+        for (repo in data) {
+            let repoInfo = {
+                'repo_name': data[repo].repo_name,
+                'repo_desc': data[repo].repo_desc,
+                'repo_url': data[repo].repo_url,
+            }
+
+           repos.push(repoInfo)
+        }
+        
+        
+        
+    } catch(err) {
+        console.error(err);
+    }
+
+    for (repo in repos) {
+        const projectCard = document.createElement('project-card');
+        projectsContainer.appendChild(projectCard);
+    }
+}
+
+getRepos();
