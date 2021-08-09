@@ -1,0 +1,42 @@
+* {
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+body {
+    font-family: 'JetBrains Mono', monospace;
+    display: flexbox;
+}
+
+h1 {
+    font-weight: 400;
+}
+
+/* testing */
+#dark-mode {
+    background-color: rgba(33, 37, 41, 1);
+    color:rgb(255, 255, 255);
+}
+
+#light-mode {
+    background-color: white;
+}
+
+#introduction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 3em;
+}
+
+.fa-github-square { 
+    color: grey;
+}
+
+.fa-linkedin {
+    color: #0a66c2;
+}
+
+.fa-twitter-square {
+    color: #1da1f2;
+}
