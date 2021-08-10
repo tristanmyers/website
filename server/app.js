@@ -4,7 +4,7 @@ const fetch = require('node-fetch');
 const app = express();
 const port = 3000;
 
-app.use(express.static('public'));
+app.use(express.static('public/'));
 app.use(express.json());
 
 app.get('/', (req, res) => {
@@ -37,6 +37,7 @@ app.get('/get_repos', (req, res) => {
                     console.log(repoInfo);
                 }
             }
+
             res.send(repos); 
             return;
 
