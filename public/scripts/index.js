@@ -21,26 +21,29 @@ async function getRepos() {
         });
         let data = await response.json();
 
-        for (let repo in data) {
-            let repoInfo = {
-                'repo_name': data[repo].repo_name,
-                'repo_desc': data[repo].repo_desc,
-                'repo_url': data[repo].repo_url,
-            }
-
-           repos.push(repoInfo)
-        }
+        repos.push(data);
+                
     } catch(err) {
         console.error(err);
     }
 
-    for (let repo in repos) {
-        const projectCard = document.createElement('project-card');
-        projectCard.setAttribute('name', repos[repo].repo_name);
-        projectCard.setAttribute('desc', repos[repo].repo_desc);
-        projectCard.setAttribute('url', repos[repo].repo_url);
-        projectsContainer.appendChild(projectCard);
-    }
+    addRepos();
 }
 
-// getRepos();
+// creating card element and setting attributes to repo data so the card can render them.
+function addRepos() {
+    for (let repo in repos[0]) {
+        const projectCard = document.createElement('project-card');
+        projectCard.setAttribute('name', repos[0][repo].repo_name);
+        projectCard.setAttribute('desc', repos[0][repo].repo_desc);
+        projectCard.setAttribute('url', repos[0][repo].repo_url);
+        projectCard.setAttribute('homepage', repos[0][repo].project_homepage);
+        projectsContainer.appendChild(projectCard);
+    }
+    console.log(repos);
+    
+}
+
+window.addEventListener('load', () => {
+    getRepos();
+});
