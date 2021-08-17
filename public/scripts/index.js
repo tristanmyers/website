@@ -13,9 +13,10 @@ then display each card on the site.
 async function getRepos() {
 
     try {
-        let response = await fetch('/get_repos', {
+        let response = await fetch('https://tristanmyers-website.herokuapp.com/get_repos', {
             method: 'GET',
             headers: {
+                'Sec-Fetch-Mode': 'cors',
                 'accept': 'application/json'
             }
         });
