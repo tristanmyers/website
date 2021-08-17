@@ -8,7 +8,7 @@ app.use(express.static('public/'));
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.sendFile('index.html', {root: './'});
+    res.send('working');
 });
 
 // this only fetches 1 page. How do i check every page?
