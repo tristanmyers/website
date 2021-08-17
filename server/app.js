@@ -1,9 +1,11 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const fetch = require('node-fetch');
 const app = express();
 const port = process.env.PORT;
 
+app.use(cors());
 app.use(express.static('public/'));
 app.use(express.json());
 
@@ -40,6 +42,8 @@ app.get('/get_repos', (req, res) => {
                 }
             }
 
+            res.header("Access-Control-Allow-Origin", "*");
+            res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
             res.send(repos); 
             return;
 
