@@ -21,6 +21,102 @@ export default class ProjectCard extends HTMLElement {
             font-family: Noto Sans JP;
             display: flex;
             flex-direction: column;
+            height: auto;
+            width: 30rem;
+            padding-bottom: 10px;
+        }
+
+        a, a:visited{
+            color: white;
+        }
+
+        #project-name {
+            text-align: start;
+            width: auto;
+            padding: 5px 0px 0px 5px;
+        }
+
+        #project-homepage-url {
+            text-align: start;
+            padding: 5px 0px 0px 5px;
+        }
+
+        #project-desc {
+            padding-left: 5px;
+        }
+        </style>
+        `
+
+        const projectName = document.createElement('a');
+        projectName.setAttribute('id', 'project-name');
+        projectName.setAttribute('href', this.getAttribute('url'));
+        projectName.innerHTML = this.getAttribute('name');
+
+        const projectHomepage = document.createElement('a');
+        projectHomepage.setAttribute('id', 'project-homepage-url');
+        projectHomepage.setAttribute('href', this.getAttribute('homepage'));
+        projectHomepage.innerHTML = 'homepage';
+
+        const projectDesc = document.createElement('p');
+        projectDesc.setAttribute('id', 'project-desc');
+        projectDesc.innerHTML = this.getAttribute('desc');
+
+        projectCardContainer.appendChild(projectName);
+        projectCardContainer.appendChild(projectHomepage);
+        projectCardContainer.appendChild(projectDesc);
+
+        this.shadow.appendChild(projectCardContainer);
+    }
+
+    // called when the element is added to the dom 
+    connectedCallback() {
+        if (!this.rendered) {
+            this.render();
+            this.rendered = true;
+        }
+    }
+
+    // watching for changes of these attributes
+    static get observedAttributes() {
+        return ['name', 'desc', 'url', 'homepage'];
+    }
+
+    // when a attribute changes call render
+    attributeChangedCallback() {
+        this.render();
+    }
+}
+
+
+
+
+
+
+
+
+
+export class OldProjectCard extends HTMLElement {
+
+    // couldn't use shadow in methods so i added parameter to constructor
+    constructor(shadow) {
+        super();
+        this.shadow = this.attachShadow({mode: 'open'});
+    }
+    
+    // appending styling and card content to the shadow-root
+    render = () => {
+        const projectCardContainer = document.createElement('section');
+        projectCardContainer.setAttribute('class', 'project-card-container');
+        
+        // card styling     
+        this.shadow.innerHTML = 
+        `
+        <style>
+        .project-card-container {
+            background-color: #292E33;
+            font-family: Noto Sans JP;
+            display: flex;
+            flex-direction: column;
             height: 100%;
             padding-bottom: 10px;
         }

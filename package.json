@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "bundle": "parcel index.html",
-    "watch-server": "nodemon app.js"
+    "watch-server": "nodemon app.js",
+    "start": "node server/app.js"
   },
   "repository": {
     "type": "git",

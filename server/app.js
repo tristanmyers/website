@@ -29,8 +29,10 @@ app.get('/get_repos', (req, res) => {
                 repoInfo = {
                     'repo_name': data[repo].full_name,
                     'repo_desc': data[repo].description,
-                    'repo_url': data[repo].url,
-                }
+                    'repo_url': data[repo].html_url,
+                    'project_homepage': data[repo].homepage,
+                    'repo_languages': data[repo].language
+                };
 
                 if (data[repo].topics == 'showoff') {
                     repos.push(repoInfo);
@@ -46,6 +48,7 @@ app.get('/get_repos', (req, res) => {
         }
         
     }
+
     getRepos();
 });
 
