@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const fetch = require('node-fetch');
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
 app.use(express.static('public/'));
 app.use(express.json());
@@ -54,5 +54,5 @@ app.get('/get_repos', (req, res) => {
 
 
 app.listen(port, () => {
-    console.log(`Listening at http://localhost:${port}`);
+    console.log(`server online.`);
 });
