@@ -39,9 +39,7 @@ function addRepos() {
         projectCard.setAttribute('url', repos[0][repo].repo_url);
         projectCard.setAttribute('homepage', repos[0][repo].project_homepage);
         projectsContainer.appendChild(projectCard);
-    }
-    console.log(repos);
-    
+    }    
 }
 
 window.addEventListener('load', () => {
