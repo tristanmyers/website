@@ -12,6 +12,7 @@ app.get('/', (req, res) => {
 });
 
 // this only fetches 1 page. How do i check every page?
+/*
 app.get('/get_repos', (req, res) => {
     let repos = [];
     async function getRepos() {
@@ -51,6 +52,7 @@ app.get('/get_repos', (req, res) => {
 
     getRepos();
 });
+*/
 
 
 app.listen(port, () => {
