@@ -10,7 +10,7 @@ const projectsContainer = document.querySelector('#projects-container');
 at document load, fetch the repos from github and and push the repoinfo objects to repos array     
 then display each card on the site.
 */
-\async function getRepos() {
+async function getRepos() {
     try {
         let response = await fetch('https://api.github.com/users/tristanmyers/repos', {
             method: 'GET',
