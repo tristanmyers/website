@@ -18,6 +18,7 @@ async function getRepos() {
                 'Accept': 'application/vnd.github.mercy-preview+json'
             }
         });
+      
         let data = await response.json();
 
         for (let repo in data) {
