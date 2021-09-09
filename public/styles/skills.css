@@ -1,0 +1,31 @@
+#skills-container {
+	background-color: #292E33;
+	grid-area: skills-container;
+	grid-column-start: 3;
+	grid-column-end: -2;
+	grid-row-start: 2;
+	grid-row-end: 5;
+	display: flex;
+	flex-direction: column;
+  align-content: center;
+  width: 12rem;
+  padding: 15px 10px 10px 10px;
+}
+
+#skills-section-header {
+	align-self: center;
+	padding-bottom: 5px;
+}
+
+.skills-title {
+	padding-left: 10px;
+}
+
+.skills-section-list {
+	list-style: none;
+	padding: 5px 0px 5px 0px;
+}
+
+.skills-item {
+	padding-left: 20px;
+}
