@@ -22,7 +22,7 @@ export default class ProjectCard extends HTMLElement {
             display: flex;
             flex-direction: column;
             height: auto;
-            width: 30rem;
+            width: auto;
             padding-bottom: 10px;
         }
 
