@@ -1,26 +1,50 @@
-#container {
-    display: flex;
-    flex-direction: column;
+a, a:visited{
+	color: white;
 }
 
-#projects-container { 
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    height: 25rem;
-    width: 100%;
+#projects-container {
+	grid-area: projects-container;
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 2;
+	grid-row-end: 5;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+}
+/* TODO: need to center h1, can't seem to do it properly, LOOK INTO GRID LAYOUT INSTEAD OF FLEXBOX */
+#projects-section-header {
+	background-color: #292E33;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	text-align: left;
+	width: 40rem;
+	margin: 0px 0px 20px 0px;
+	padding: 10px;
+}
+
+#projects-section-header-title {
+	text-align: center;
+}
+
+#projects-section-header-link {
+	align-self: center;
 }
 
 project-card {
-    margin: 0px 5px 0px 5px;
+	margin: 0px 5px 0px 0px;
+	padding: 0px 0px 5px 0px;
 }
 
 footer {
-    background-color: #292E33;
-    position: fixed;
-    height: 3rem;
-    width: 100%;
-    bottom: 0px;
-    text-align: center;
-    padding-top: 15px;
+	background-color: #292E33;
+	position: fixed;
+	height: 3rem;
+	width: 100%;
+	bottom: 0px;
+	text-align: center;
+	padding-top: 15px;
 }
