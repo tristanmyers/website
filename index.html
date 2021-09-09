@@ -1,38 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tristanmyers.dev</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet"> 
-    <script src="https://kit.fontawesome.com/1947897511.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="styles/index.css">
-    <link rel="stylesheet" href="styles/projects.css">
-    <link rel="stylesheet" href="styles/skills.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>tristanmyers.dev</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet"> 
+	<script src="https://kit.fontawesome.com/1947897511.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="styles/index.css">
+	<link rel="stylesheet" href="styles/projects.css">
+	<link rel="stylesheet" href="styles/skills.css">
 </head>
 <body id="dark-mode">
-    <div id="container">
-        <section id="introduction">
-            <h1>Website of Tristan Myers</h1>
-            <p>Developing Webpages and Webapps</p>
-            <div id="logos">
-                <span class="logo"><a class="logo-link" href="https://github.com/tristanmyers"><i class="fab fa-github-square fa-3x"></i></a></span>
-                <span class="logo"><a class="logo-link" href="https://www.linkedin.com/in/tristan-anthony-myers/"><i class="fab fa-linkedin fa-3x"></i></a></span>
-                <span class="logo"><a class="logo-link" href="https://twitter.com/tristanmyersA"><i class="fab fa-twitter-square fa-3x"></i></a></span>
-            </div>
-        </section>
-        <section id="projects-container">
-        </section>
-        <!-- <section id="skills">
-            <h3>Skills: </h2>
-            </section> -->
-            <footer>
-                <p>Contact me at: tristanmyers.developer@gmail.com</p>
-            </footer>
-        </div>
-        
-        <script  type="module" src="scripts/index.js"></script>
-        <script type="module" src="scripts/ProjectCard.js"></script>
+	<div id="container">
+		<section id="introduction-container">
+			<h1>Website of Tristan Myers</h1>
+			<p>Developing Webpages and Webapps</p>
+			<div id="logos">
+				<span class="logo"><a class="logo-link" href="https://github.com/tristanmyers"><i class="fab fa-github-square fa-3x"></i></a></span>
+				<span class="logo"><a class="logo-link" href="https://www.linkedin.com/in/tristan-anthony-myers/"><i class="fab fa-linkedin fa-3x"></i></a></span>
+				<span class="logo"><a class="logo-link" href="https://twitter.com/tristanmyersA"><i class="fab fa-twitter-square fa-3x"></i></a></span>
+			</div>
+		</section>
+		<section id="projects-container">
+			<header id="projects-section-header">
+				<h2 id="projects-section-header-title">Featured Projects</h2>
+				<a id="projects-section-header-link" href="https://github.com/tristanmyers?tab=repositories">More Projects</a>
+			</header>
+		</section>
+		<section id="skills-container">
+			<header id="skills-section-header">
+				<h3 id="skills-section-header-title">Skills</h3>
+			</header>
+			<ul id="skills-languages" class="skills-section-list">
+				<li id="skills-languages-title" class="skills-title">Languages</li>
+				<li class="skills-languages-item skills-item">HTML</li>
+				<li class="skills-languages-item skills-item">CSS</li>
+				<li class="skills-languages-item skills-item">Javascript</li>
+				<li class="skills-languages-item skills-item">Typescript</li>
+			</ul>
+			<ul id="skills-technologies" class="skills-section-list">
+				<li id="skills-technologies-title" class="skills-title">Technologies</li>
+				<li class="skills-technologies-item skills-item">Node.js/Express.js</li>
+			</ul>
+		</section>
+		<footer>
+			<p>Contact me at: tristanmyers.developer@gmail.com</p>
+		</footer>
+	</div>
+		<script  type="module" src="scripts/index.js"></script>
+		<script type="module" src="scripts/ProjectCard.js"></script>
 </body>
 </html>
