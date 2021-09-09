@@ -6,7 +6,8 @@
   "scripts": {
     "bundle": "parcel index.html",
     "watch-server": "nodemon app.js",
-    "start": "node server/app.js"
+    "start": "node server/app.js",
+    "start-local": "nodemon server/localapp.js"
   },
   "repository": {
     "type": "git",
