@@ -9,7 +9,6 @@ a, a:visited{
 	grid-row-start: 2;
 	grid-row-end: 5;
 	align-items: center;
-	width: 100%;
 }
 /* TODO: need to center h1, can't seem to do it properly, LOOK INTO GRID LAYOUT INSTEAD OF FLEXBOX */
 #projects-section-header {
