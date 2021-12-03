@@ -8,51 +8,51 @@ app.use(express.static('public/'));
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.sendFile('index.html', {root: './'});
+		res.sendFile('index.html', {root: './'});
 });
 
 // this only fetches 1 page. How do i check every page?
-app.get('/get_repos', (req, res) => {
-    let repos = [];
-    async function getRepos() {
-        try { 
-            let response = await fetch('https://api.github.com/user/repos', {
-                method: 'GET',
-                headers: {
-                    'Accept': 'application/vnd.github.mercy-preview+json',
-                    'Authorization': `token ${process.env.GITHUB_AUTH}`,
-                }
-            });
-            let data =  await response.json();
+// app.get('/get_repos', (req, res) => {
+//     let repos = [];
+//     async function getRepos() {
+//         try { 
+//             let response = await fetch('https://api.github.com/user/repos', {
+//                 method: 'GET',
+//                 headers: {
+//                     'Accept': 'application/vnd.github.mercy-preview+json',
+//                     'Authorization': `token ${process.env.GITHUB_AUTH}`,
+//                 }
+//             });
+//             let data =  await response.json();
 
-            for (repo in data) {
-                repoInfo = {
-                    'repo_name': data[repo].full_name,
-                    'repo_desc': data[repo].description,
-                    'repo_url': data[repo].html_url,
-                    'project_homepage': data[repo].homepage,
-                    'repo_languages': data[repo].language
-                };
+//             for (repo in data) {
+//                 repoInfo = {
+//                     'repo_name': data[repo].full_name,
+//                     'repo_desc': data[repo].description,
+//                     'repo_url': data[repo].html_url,
+//                     'project_homepage': data[repo].homepage,
+//                     'repo_languages': data[repo].language
+//                 };
 
-                if (data[repo].topics == 'showoff') {
-                    repos.push(repoInfo);
-                    console.log(repoInfo);
-                }
-            }
+//                 if (data[repo].topics == 'showoff') {
+//                     repos.push(repoInfo);
+//                     console.log(repoInfo);
+//                 }
+//             }
 
-            res.send(repos); 
-            return;
+//             res.send(repos); 
+//             return;
 
-        } catch (err) {
-            console.error(err);
-        }
-        
-    }
+//         } catch (err) {
+//             console.error(err);
+//         }
+				
+//     }
 
-    getRepos();
-});
+//     getRepos();
+// });
 
 
 app.listen(port, () => {
-    console.log(`server online.`);
+		console.log(`server online.`);
 });
