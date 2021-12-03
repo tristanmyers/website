@@ -111,3 +111,23 @@ h2 {
 		width: 15rem;
 	}
 }
+
+@media screen and (max-width: 484px) {
+	#container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#projects-container {
+		padding: 0;
+		margin: 0;
+	}
+
+	project-card {
+		display: block;
+		width: 16.2rem;
+		height: 16rem;
+		font-size: 1em;
+	}
+}
