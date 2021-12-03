@@ -3,8 +3,10 @@
 	border: 0;
 	margin: 0;
 }
+
 body {
 	font-family: 'JetBrains Mono', monospace;
+	font-size: 1em;
 	display: flexbox;
 }
 
@@ -25,16 +27,15 @@ h2 {
 #light-mode {
 	background-color: white;
 }
-/* testin end */
+/* testing end */
 
-/* ISSUE: template area is displaying names in the wrong place*/
 #container {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-areas:
-		"introduction-container"
-		"projects-container" 
-		"skills-container";
+	"introduction-container"
+	"projects-container" 
+	"skills-container";
 }
 
 #introduction-container {
@@ -59,4 +60,54 @@ h2 {
 
 .fa-twitter-square {
 	color: #1da1f2;
+}
+
+@media screen and (max-width: 882px) {
+	#introduction-container {
+		grid-column-end: 4;
+	}
+
+	project-card {
+		display: block;
+		width: 31.2rem;
+		padding-bottom: 20px;
+	}
+	
+	#projects-section-header {
+		width: 30rem;
+	}
+}
+
+@media screen and (max-width: 726px) {
+	#introduction-container {
+		grid-column-end: 4;
+	}
+
+	project-card {
+		display: block;
+		width: 26.2rem;
+		padding-bottom: 20px;
+	}
+	
+	#projects-section-header {
+		width: 25rem;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	#introduction-container {
+		grid-column-end: 4;
+	}
+
+	project-card {
+		display: block;
+		width: 16.2rem;
+		height: 16rem;
+		font-size: 1em;
+		padding-bottom: 8rem;
+	}
+	
+	#projects-section-header {
+		width: 15rem;
+	}
 }
