@@ -19,9 +19,9 @@ export default class ProjectCard extends HTMLElement {
 		.project-card-container {
 			background-color: #292E33;
 			font-family: Noto Sans JP;
+			font-size: 1.2em;
 			display: flex;
 			flex-direction: column;
-			height: 10rem;
 			padding-bottom: 10px;
 		}
 
