@@ -22,7 +22,6 @@ export default class ProjectCard extends HTMLElement {
 			display: flex;
 			flex-direction: column;
 			height: 10rem;
-			width: 41rem;
 			padding-bottom: 10px;
 		}
 
@@ -32,11 +31,12 @@ export default class ProjectCard extends HTMLElement {
 
 		#project-name {
 			text-align: start;
-			width: auto;
+			width: 10em;
 			padding: 5px 0px 0px 5px;
 		}
 
 		#project-homepage-url {
+			width: 5em;
 			text-align: start;
 			padding: 5px 0px 0px 5px;
 		}
