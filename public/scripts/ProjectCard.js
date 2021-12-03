@@ -21,8 +21,8 @@ export default class ProjectCard extends HTMLElement {
 			font-family: Noto Sans JP;
 			display: flex;
 			flex-direction: column;
-			height: auto;
-			width: auto;
+			height: 10rem;
+			width: 41rem;
 			padding-bottom: 10px;
 		}
 

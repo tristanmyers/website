@@ -1,10 +1,19 @@
 import ProjectCard from './ProjectCard.js'
 
-let repos = [];
+// hard coding repos because im not using server to fetch private repos
+let repos = [
+	{
+		'repo_name': 'Falling twitch emotes',
+		'repo_desc': 'This is a project for twitch.tv streams. I created a chatbot that watches for when someone puts an emote in the chat and sends a message over websockets to a server. The server renders the emote onto a canvas element that has physics, making the emote fall from the sky. I will be adding more to this project. Created with HTML, CSS, Javascript, Node.js',
+		'repo_url': 'no repo',
+		'project_homepage': 'https://i.imgur.com/3WbzjRi.mp4',
+		'repo_languages': 'HTML, CSS, Javascript, Node.js'
+	}
+];
+const projectsContainer = document.querySelector('#projects-container');
 
 customElements.define('project-card', ProjectCard);
 
-const projectsContainer = document.querySelector('#projects-container');
 
 /* 
 at document load, fetch the repos from github and and push the repoinfo objects to repos array     

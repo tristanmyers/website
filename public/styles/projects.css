@@ -8,9 +8,6 @@ a, a:visited{
 	grid-column-end: 3;
 	grid-row-start: 2;
 	grid-row-end: 5;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
 	align-items: center;
 	width: 100%;
 }
