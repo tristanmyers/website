@@ -5,5 +5,5 @@
 - Possibly a blog
 - Possibly some experimental stuff
 
-I built this website in pure vanilla js, css and html because I want to experience
+I built this website in vanilla js, css and html because I want to experience
 the pain and suffering of implementing modern features that frameworks bring, with just vanilla js.
