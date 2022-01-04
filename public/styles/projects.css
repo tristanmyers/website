@@ -34,13 +34,3 @@ project-card {
 	margin: 0px 5px 0px 0px;
 	padding: 0px 0px 5px 0px;
 }
-
-footer {
-	background-color: #292E33;
-	position: fixed;
-	height: 3rem;
-	width: 100%;
-	bottom: 0px;
-	text-align: center;
-	padding-top: 15px;
-}
